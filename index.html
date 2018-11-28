@@ -9,6 +9,7 @@
     </head>
     <body>
         <div class="main-body">
+            <div class="container">
             <form id="form">
             <div class="form-group">
                 <label for="usr">Enter Book Name</label>
@@ -18,6 +19,7 @@
                 <button onclick="function2();" type="button" id="search-button" class="btn btn-info">Search</button>
             </div>
             </form>
+        </div>
             <div id="result">
             </div> 
         <script>
@@ -30,6 +32,7 @@
                 success: handleResponse
             });
             function handleResponse(res){
+                $('#result').html("");
                 $.each(res.items,function(i,item){
                     var title = item.volumeInfo.title,
                         author = item.volumeInfo.authors[0],
